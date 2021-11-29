@@ -12,7 +12,8 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: GetListComponent},
   {path: 'log', component: LoginComponent},
-  {path: 'jo', component:JoinComponent}
+  {path: 'jo', component:JoinComponent},
+  {path: 'list/get', component:GetHotelComponent}
 ]
 
 
