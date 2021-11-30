@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-join',
@@ -12,4 +13,8 @@ export class JoinComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  registerUser(registerForm: NgForm):void {
+    const username:string = registerForm.value.username;
+    const password:string = registerForm.value.password;
+  }
 }

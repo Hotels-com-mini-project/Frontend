@@ -7,17 +7,11 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title : string= 'team4front';
-  username : string ='gdfgsd';
+  title : string= 'Hotels.com';
 
   constructor( ) {}
 
   ngOnInit(): void {
    
-  }
-
-  setUserName(name: string):void {
-    this.username = name;
-    console.log(this.username);
   }
 }
