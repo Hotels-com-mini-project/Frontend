@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { RegisterService } from './register.service';
 
 @Component({
   selector: 'app-join',
@@ -8,13 +10,21 @@ import { NgForm } from '@angular/forms';
 })
 export class JoinComponent implements OnInit {
 
-  constructor() { }
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
   registerUser(registerForm: NgForm):void {
-    const username:string = registerForm.value.username;
-    const password:string = registerForm.value.password;
+    this.registerService.registerRequest(registerForm.value).subscribe(
+      (response: User) => {
+        console.log(response);
+        registerForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error.message);
+        registerForm.reset();
+      }
+    )
   }
 }
