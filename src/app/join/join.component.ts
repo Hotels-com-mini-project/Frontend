@@ -1,4 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { RegisterService } from './register.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-join',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinComponent implements OnInit {
 
-  constructor() { }
+  constructor(private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
 
+  registerUser(registerForm: NgForm):void {
+    this.registerService.registerRequest(registerForm.value).subscribe(
+      (response: User) => {
+        console.log(response);
+        registerForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error.message);
+        registerForm.reset();
+      }
+    )
+  }
 }
