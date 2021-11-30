@@ -8,61 +8,29 @@
     </form>
   </div>
 </nav>
-<h1>호텔목록</h1>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card h-100">
-      <img src="../assets/image1/경포 비치 관광 호텔1.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">경포대 호텔1 </p>
-        <a  class="btn btn-primary" routerLink="/list/get"  aria-current="page">보러가기</a>
+<div class="container" id="main-container">
+  <div class="row">
+      <div *ngFor="let hotel of hotels" class="col-md-6 col-xl-3">
+          <div class="card m-b-30">
+              <div class="card-body row">
+                  <div class="col-6">
+                      <!-- Hotel Image -->
+                      <a href=""><img src="{{hotel?.hotelimage}}" alt="" class="img-fluid rounded-circle w-60"></a>
+                  </div>
+                  <div class="col-6 card-title align-self-center mb-0">
+                      <h5>{{hotel?.hotelname}}</h5>
+                  </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                  <!-- <li class="list-group-item"><i class="fa fa-envelope float-right"></i>hotelid : {{hotel?.hotelid}}</li> -->
+                  <!-- <li class="list-group-item"><i class="fa fa-phone float-right"></i>hotelname : {{hotel?.hotelname}}</li> -->
+                  <li class="list-group-item"><i class="fa fa-phone float-right"></i>address : {{hotel?.address}}</li>
+                  <!-- <li class="list-group-item"><i class="fa fa-phone float-right"></i>hotelimage : {{hotel?.hotelimage}}</li> -->
+              </ul>
+              </div>
+          </div>
       </div>
-      <div class="card-footer">
-      </div>
-    </div>
   </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="../assets/image1/경포 비치 관광 호텔2.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">경포대 호텔2 </p>
-        <a  class="btn btn-primary" routerLink="/list/get"  aria-current="page">보러가기</a>
-      </div>
-      <div class="card-footer">
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="../assets/image1/경포 비치 관광 호텔3.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">경포대 호텔3 </p>
-        <a  class="btn btn-primary" routerLink="/list/get"  aria-current="page">보러가기</a>
-      </div>
-      <div class="card-footer">
-      </div>
-    </div>
-  </div>
-</div>
-<div class="align">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</div>
-<footer class="bg-dark mt-4 p-5 text-center" style="color:#FFFFFF;">
-  Copyright &copy; 2021 Hotle Service
-</footer>
+
 
 

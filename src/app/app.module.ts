@@ -11,7 +11,9 @@ import { MypageComponent } from './mypage/mypage.component';
 import { ReviewComponent } from './review/review.component';
 import { Mypage1Component } from './mypage1/mypage1.component';
 import { TestComponent } from './test/test.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HotelService } from './hotel.service';
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: GetListComponent},
@@ -40,10 +42,12 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule
 
   ],
-  providers: [],
+  providers: [HotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
