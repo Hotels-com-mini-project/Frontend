@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-       <a  class="btn btn-primary" routerLink="/"  aria-current="page">호텔 4조 프로젝트</a>&nbsp;&nbsp;&nbsp;&nbsp;
       <form class="d-flex" >
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button routerLink="/list" class="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;
@@ -11,8 +10,6 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-           
-            <a class="btn btn-primary"routerLink="/list" aria-current="page">호텔목록 보러가기</a>&nbsp;&nbsp;
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,21 +17,27 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item">로그아웃</a></li>
-              <li><hr class="dropdown-divider"></li>
             </ul>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-<h1>회원 정보 수정</h1>
-<form class="row g-3">
-    <div class="col-auto">
-      <label for="inputPassword2" class="visually-hidden">Password</label>
-      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+
+  <hr/>
+  <h1 style="width: 30%; float: none; margin: 0 auto">회원정보 수정</h1>
+  <form  method="post" class="form-floating">
+    <div class="form-floating"style="width: 30%; float: none; margin: 0 auto">
+        <input type="text" class="form-control" name="id"> <label>아이디
+            입력</label>
     </div>
-    <div class="col-auto">
-        <a  class="btn btn-primary" routerLink="/my1"  aria-current="page">클릭</a>
+    <br />
+    <div class="form-floating" style="width: 30%; float: none; margin: 0 auto">
+        <input type="password" class="form-control" name="password">
+        <label>비밀번호 입력</label>
     </div>
-  </form>
- 
+    <div style="width: 30%; float: none; margin: 0 auto">
+        <a routerLink="/" class="w-100 btn btn-lg btn-primary" aria-current="page" >회원수정 하기</a>
+     
+
+     
