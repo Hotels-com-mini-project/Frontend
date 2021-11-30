@@ -1,1 +1,43 @@
-
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+       <a  class="btn btn-primary" routerLink="/"  aria-current="page">호텔 4조 프로젝트</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <form class="d-flex" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button routerLink="/list" class="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;
+      </form>
+      <button class="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+           
+            <a class="btn btn-primary"routerLink="/list" aria-current="page">호텔목록 보러가기</a>&nbsp;&nbsp;
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              메뉴
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">로그아웃</a></li>
+              <li><hr class="dropdown-divider"></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<h1>회원 정보 수정</h1>
+<form class="row g-3">
+    <div class="col-auto">
+      <label for="staticEmail2" class="visually-hidden">id</label>
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="ID">
+    </div>
+    <div class="col-auto">
+      <label for="inputPassword2" class="visually-hidden">Password</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    </div>
+    <div class="col-auto">
+        <a  class="btn btn-primary" routerLink="/my1"  aria-current="page">클릭</a>
+    </div>
+  </form>

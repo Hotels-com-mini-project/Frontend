@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MypageComponent } from './mypage/mypage.component';
 import { ReviewComponent } from './review/review.component';
+import { Mypage1Component } from './mypage1/mypage1.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   {path: 'jo', component:JoinComponent},
   {path: 'list/get', component:GetHotelComponent},
   {path: 'review', component:ReviewComponent},
-  {path: 'my', component:MypageComponent}
+  {path: 'my', component:MypageComponent},
+  {path: 'my1', component:Mypage1Component}
 ]
 
 
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     LoginComponent,
     HomeComponent,
     MypageComponent,
-    ReviewComponent
+    ReviewComponent,
+    Mypage1Component
   ],
   imports: [
     BrowserModule,

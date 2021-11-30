@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <form class="d-flex" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button routerLink="/list" class="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;
+      </form>
+      <button class="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              메뉴
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item">로그아웃</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+    <a routerLink="/" class="w-100 btn btn-lg btn-primary" aria-current="page" >홈</a>
+  
+    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+    <a routerLink="/review" class="w-100 btn btn-lg btn-primary" aria-current="page" >호텔 리뷰쓰기</a>
+  
+    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+    <a routerLink="/list/get" class="w-100 btn btn-lg btn-primary" aria-current="page" >호텔 리뷰보기</a>
+  </div>
+  <hr/>
+  <h1 style="width: 30%; float: none; margin: 0 auto">회원정보 수정</h1>
+  <form  method="post" class="form-floating">
+    <div class="form-floating"style="width: 30%; float: none; margin: 0 auto">
+        <input type="text" class="form-control" name="id"> <label>아이디
+            입력</label>
+    </div>
+    <br />
+    <div class="form-floating" style="width: 30%; float: none; margin: 0 auto">
+        <input type="password" class="form-control" name="password">
+        <label>비밀번호 입력</label>
+    </div>
+    <div style="width: 30%; float: none; margin: 0 auto">
+        <a routerLink="/" class="w-100 btn btn-lg btn-primary" aria-current="page" >회원수정 하기</a>
+
+     

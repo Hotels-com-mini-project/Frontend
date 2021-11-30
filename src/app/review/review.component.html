@@ -1,27 +1,10 @@
 
 <h1>리뷰달기</h1>
-<div align="center"class="container-fluid">
-    <form  method="post">
-        <table class="table table-striped table-hover">
-            <tr class="table-active" class="border border-5">
-                <td>제목</td>
-                <td class="border border-primary"><input type="text" name="title" required="required" /></td>
-            </tr>
-            <tr class="border border-5">
-                <td>작성자</td>
-                <td class="border border-primary"><input type="text" name="writer" required="required" /></td>
-            </tr>
-            <tr class="border border-5">
-                <td>내용</td>
-                <td class="border border-primary"><textarea name="content" rows="15" cols="100" required="required"></textarea></td>
-            </tr>
-            <tr class="border border-5">
-                <td class="border border-primary"><input type="submit" value="글등록"></td>
-                <td class="border border-primary"><input type="reset" value="취소"></td>
-            </tr>
-        
-        </table>
-    
-    
-    </form>
-        <a  class="btn btn-primary" routerLink="/list/get"  aria-current="page">클릭!</a>
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
