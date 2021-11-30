@@ -19,11 +19,11 @@
               메뉴
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a routerLink="/log" class="dropdown-item"routerLinkActive="active">로그인</a></li>
+              <li><a class="dropdown-item" (click)="clickedLoginModal()">로그인</a></li>
               <li><a class="dropdown-item">로그아웃</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a routerLink="/jo" class="dropdown-item" >회원가입</a></li>
-              <li><a routerLink="/my"class="dropdown-item">마이페이지</a></li>
+              <li><a class="dropdown-item" (click)="clickedRegisterModal()">회원가입</a></li>
+              <li><a class="dropdown-item">마이페이지</a></li>
             </ul>
           </li>
         </ul>
@@ -55,3 +55,46 @@
     Copyright &copy; 2021 Hotle Service
 </footer>
 
+
+<div [ngClass]="Loginmodal ? 'modal fade show d-block' : 'modal fade'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+        <button type="button" class="close" (click)="clickedModalClose()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      <input type="text" value="id" placeholder="id"><br>
+      <input type="password" value="pwd" placeholder="password">
+      </div>
+      <div class="modal-footer">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">로그인 하기</button>
+        <button type="button" class="btn btn-secondary" (click)="clickedModalClose()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [ngClass]="Registermodal ? 'modal fade show d-block' : 'modal fade'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">회원가입</h5>
+        <button type="button" class="close" (click)="clickedModalClose()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      <input type="text" value="id" placeholder="id"><br>
+      <input type="text" value="pwd" placeholder="password"><br>
+      <input type="password" value="pwd" placeholder="password">
+      </div>
+      <div class="modal-footer">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">회원가입</button>
+        <button type="button" class="btn btn-secondary" (click)="clickedModalClose()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
