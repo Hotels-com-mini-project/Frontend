@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { MypageComponent } from './mypage/mypage.component';
 import { ReviewComponent } from './review/review.component';
 import { Mypage1Component } from './mypage1/mypage1.component';
+import { TestComponent } from './test/test.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     HomeComponent,
     MypageComponent,
     ReviewComponent,
-    Mypage1Component
+    Mypage1Component,
+    TestComponent
   ],
   imports: [
     BrowserModule,
