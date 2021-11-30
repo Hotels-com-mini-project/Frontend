@@ -22,8 +22,8 @@
               <li><a class="dropdown-item" (click)="clickedLoginModal()">로그인</a></li>
               <li><a class="dropdown-item">로그아웃</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" (click)="clickedRegisterModal()">회원가입</a></li>
-              <li><a class="dropdown-item">마이페이지</a></li>
+              <li><a class="dropdown-item" (click)="clickedRegisterModal()">회원가a입</a></li>
+              <li><a class="dropdown-item" routerLink="/my">마이페이지</a></li>
             </ul>
           </li>
         </ul>
@@ -51,11 +51,6 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <footer class="bg-dark mt-4 p-5 text-center" style="color:#FFFFFF;">
-    Copyright &copy; 2021 Hotel Service
-</footer>
-
-
 <div [ngClass]="Loginmodal ? 'modal fade show d-block' : 'modal fade'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

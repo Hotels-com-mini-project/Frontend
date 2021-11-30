@@ -19,6 +19,8 @@ import { MypageComponent } from './mypage/mypage.component';
 import { ReviewComponent } from './review/review.component';
 import { Mypage1Component } from './mypage1/mypage1.component';
 import { TestComponent } from './test/test.component';
+import { HotelService } from './hotel.service';
+
 
 
 const appRoutes: Routes = [
@@ -54,7 +56,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [LoginService, RegisterService],
+  providers: [HotelService, LoginService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

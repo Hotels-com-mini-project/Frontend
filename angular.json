@@ -71,6 +71,7 @@
             },
             "development": {
               "browserTarget": "team4front:build:development"
+              
             }
           },
           "defaultConfiguration": "development"
