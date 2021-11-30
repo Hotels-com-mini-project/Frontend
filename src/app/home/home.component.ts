@@ -11,5 +11,25 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public Loginmodal : boolean = false;
+  public Registermodal : boolean = false;
+
+
+
+  clickedModalClose(){
+    this.Loginmodal =false;
+    this.Registermodal =false;
+
+  }
+
+  clickedLoginModal(){
+    this.Loginmodal=true;
+  }
+
+  clickedRegisterModal(){
+    this.Registermodal=true;
+
+  }
+
 
 }
