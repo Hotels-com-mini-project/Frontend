@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/user';
+import { NgForm } from '@angular/forms';
+import { LoginService } from '../login/login.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +34,17 @@ export class HomeComponent implements OnInit {
     this.Registermodal=true;
 
   }
-
+  loginUser(loginForm: NgForm):void {
+    this.loginService.loginRequest(loginForm.value).subscribe(
+      (response: User) => {
+        console.log(response);
+        loginForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error.message);
+        loginForm.reset();
+      }
+    )
+  }
 
 }
