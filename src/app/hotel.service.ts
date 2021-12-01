@@ -12,7 +12,7 @@ export class HotelService {
 
   constructor(private http: HttpClient) { }
 
-  public getHotels(): Observable<HotelMain[]> {
+  public getHotels(pageNo: number): Observable<HotelMain[]> {
     return this.http.get<HotelMain[]>(`${this.serverUrl}/main/hotel?page=1`)
     .pipe(map((data : any) => data.content),
       catchError(error => {

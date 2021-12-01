@@ -9,19 +9,25 @@ import { HotelService } from '../hotel.service';
   styleUrls: ['./get-list.component.css']
 })
 export class GetListComponent implements OnInit {
-  public hotels : HotelMain[];
+  public hotels : Array<HotelMain>;
+  public pageNo : number;
+  public item : HotelMain[];
   constructor(private hotelService : HotelService) { 
-    this.hotels=[];
+    this.hotels= [];
+    this.pageNo = 1;
+    this.item = [];
   }
 
   ngOnInit(): void {
     this.getHotelMains();
   }
   public getHotelMains(): void{
-    this.hotelService.getHotels().subscribe(
-      (response : HotelMain[])=>{
-        this.hotels = response;
-        console.log(response);
+    this.hotelService.getHotels(this.pageNo).subscribe(
+      (response)=>{
+        this.item = response;
+        for(let i of this.item) {
+          this.hotels.push(i);
+        }
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
