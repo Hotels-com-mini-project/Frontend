@@ -8,12 +8,12 @@ import { HotelMain } from './hotel.model';
   providedIn: 'root'
 })
 export class HotelService {
-  private serverUrl="http://172.30.1.29:9000";
+  private serverUrl="http://localhost:9000";
 
   constructor(private http: HttpClient) { }
 
   public getHotels(): Observable<HotelMain[]> {
-    return this.http.get<HotelMain[]>(`http://172.30.1.29:9000/main/hotel?page=1`)
+    return this.http.get<HotelMain[]>(`${this.serverUrl}/main/hotel?page=1`)
     .pipe(map((data : any) => data.content),
       catchError(error => {
         return throwError("불러오기 실패");
