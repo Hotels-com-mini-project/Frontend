@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -19,6 +19,11 @@ import { Mypage1Component } from './mypage1/mypage1.component';
 import { TestComponent } from './test/test.component';
 import { HotelService } from './hotel.service';
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b9e0d6051522a024ac327c57e51c228b4678a833
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: GetListComponent},
@@ -46,10 +51,18 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+<<<<<<< HEAD
     HttpClientModule,
     FormsModule
   ],
   providers: [RegisterService, HotelService],
+=======
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  providers: [HotelService, LoginService, RegisterService],
+>>>>>>> b9e0d6051522a024ac327c57e51c228b4678a833
   bootstrap: [AppComponent]
 })
 export class AppModule { }
