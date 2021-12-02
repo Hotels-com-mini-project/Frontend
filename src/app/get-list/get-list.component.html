@@ -2,33 +2,46 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
      <a  class="btn btn-primary" routerLink="/"  aria-current="page">호텔 4조 프로젝트</a>&nbsp;&nbsp;&nbsp;&nbsp;
-    <form class="d-flex" >
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button routerLink="/list" class="btn btn-outline-success" type="submit">Search</button>&nbsp;&nbsp;
-    </form>
   </div>
+  <app-search></app-search>
 </nav>
+
+
+
+
+
+
 <div class="container" id="main-container">
   <div class="row">
-      <div *ngFor="let hotel of hotels" class="col-md-6 col-xl-3">
-          <div class="card m-b-30">
-              <div class="card-body row">
-                  <div class="col-6">
-                      <!-- Hotel Image -->
-                      <a href=""><img src="{{hotel?.hotelimage}}" alt="" class="img-fluid rounded-circle w-60"></a>
-                  </div>
-                  <div class="col-6 card-title align-self-center mb-0">
+      
+      <div class="search-result-grid" *ngIf="hotelAddressArray !== undefined && hotelAddressArray.length>0; else noResult">
+      <div  *ngFor="let hotel of hotelAddressArray" class="grid-component col-md-6 col-xl-3">
+        <a [routerLink]="['/hotel', hotel.hotelid]">
+          <div>
+              <div class="grid-img">
+
+                      <img src="{{hotel?.hotelimage}}" alt="" class="img-fluid rounded-circle w-60">
+                  <div class="grid-title">
                       <h5>{{hotel?.hotelname}}</h5>
                   </div>
               </div>
-              <ul class="list-group list-group-flush">
-                  <!-- <li class="list-group-item"><i class="fa fa-envelope float-right"></i>hotelid : {{hotel?.hotelid}}</li> -->
-                  <!-- <li class="list-group-item"><i class="fa fa-phone float-right"></i>hotelname : {{hotel?.hotelname}}</li> -->
-                  <li class="list-group-item"><i class="fa fa-phone float-right"></i>address : {{hotel?.address}}</li>
-                  <!-- <li class="list-group-item"><i class="fa fa-phone float-right"></i>hotelimage : {{hotel?.hotelimage}}</li> -->
+              <div class="grid-detail">
+              <ul>
+
+                  <li ><i class="fa fa-phone float-right"></i><p>address : {{hotel?.address}}</p></li>
               </ul>
               </div>
+              </div>
+              </a>
           </div>
+          
+      </div>
+      <div class="pagination">
+        <a [routerLink]="(hasPrevPage() === true) ? ['/list', keyWord, page-1] : null">❮</a>
+        <a [routerLink]="(hasNextPage() === true) ? ['/list', keyWord, page+1] : null">❯</a>
+      
+    </div>
+      <ng-template #noResult><p>검색 결과가 없습니다.{{this.hotelAddressArray}}</p></ng-template>
       </div>
   </div>
 

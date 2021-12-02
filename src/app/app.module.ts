@@ -19,6 +19,7 @@ import { ReviewComponent } from './review/review.component';
 import { Mypage1Component } from './mypage1/mypage1.component';
 import { TestComponent } from './test/test.component';
 import { HotelService } from './hotel.service';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -29,7 +30,10 @@ const appRoutes: Routes = [
   {path: 'list/get', component:GetHotelComponent},
   {path: 'review', component:ReviewComponent},
   {path: 'my', component:MypageComponent},
-  {path: 'my1', component:Mypage1Component}
+  {path: 'my1', component:Mypage1Component},
+  {path: 'hotel/:id', component:GetHotelComponent},
+  {path: 'list/:keyword', component:GetListComponent},
+  {path: 'list/:keyword/:page', component:GetListComponent}
 ]
 
 
@@ -44,7 +48,8 @@ const appRoutes: Routes = [
     MypageComponent,
     ReviewComponent,
     Mypage1Component,
-    TestComponent
+    TestComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

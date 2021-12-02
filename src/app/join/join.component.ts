@@ -19,11 +19,11 @@ export class JoinComponent implements OnInit {
   registerUser(registerForm: NgForm):void {
     this.registerService.registerRequest(registerForm.value).subscribe(
       (response: User) => {
-        console.log(response);
+     
         registerForm.reset();
       },
       (error: HttpErrorResponse) => {
-        console.log(error.message);
+     
         registerForm.reset();
       }
     )

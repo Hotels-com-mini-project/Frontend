@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../login/login.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { RegisterService } from '../join/register.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private registerService: RegisterService) { }
 
   ngOnInit(): void {
   }
@@ -37,12 +38,25 @@ export class HomeComponent implements OnInit {
   loginUser(loginForm: NgForm):void {
     this.loginService.loginRequest(loginForm.value).subscribe(
       (response: User) => {
-        console.log(response);
+
         loginForm.reset();
       },
       (error: HttpErrorResponse) => {
-        console.log(error.message);
+  
         loginForm.reset();
+      }
+    )
+  }
+
+  registerUser(registerForm: NgForm):void {
+    this.registerService.registerRequest(registerForm.value).subscribe(
+      (response: User) => {
+   
+        registerForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+     
+        registerForm.reset();
       }
     )
   }

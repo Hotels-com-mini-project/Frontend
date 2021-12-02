@@ -19,11 +19,11 @@ export class LoginComponent implements OnInit {
   loginUser(loginForm: NgForm):void {
     this.loginService.loginRequest(loginForm.value).subscribe(
       (response: User) => {
-        console.log(response);
+     
         loginForm.reset();
       },
       (error: HttpErrorResponse) => {
-        console.log(error.message);
+    
         loginForm.reset();
       }
     )

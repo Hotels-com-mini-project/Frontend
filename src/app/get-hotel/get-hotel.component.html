@@ -1,27 +1,79 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
      <a  class="btn btn-primary" routerLink="/"  aria-current="page">호텔 4조 프로젝트</a>&nbsp;&nbsp;&nbsp;&nbsp;
-  </div>
+    <app-search></app-search>
+    </div>
+    
 </nav>
- <div class="row align-items-md-stretch">
-    <div class="col-md-6">
-        <img src="../assets/imge/asdad.png" class="" alt="...">
-        <h2>침실</h2>
-        <p>2인 전용 스위트룸</p>
-        
+
+
+<div class="wrapper">
+  <section class="heading">
+    <h1>{{ hotelAddress.hotelname }}</h1>
+    <p>{{hotel.summary}}...</p>
+  </section>
+  <section class="image">
+    <div class="image-box image-box-a">
+      <img [src]="imgArray[0]" alt="이미지가 없습니다">
+    </div>
+    <div class="image-box image-box-b">
+      <img [src]="imgArray[1]" alt="이미지가 없습니다">
+    </div>
+    <div class="image-box image-box-c">
+      <img [src]="imgArray[2]" alt="이미지가 없습니다">
+    </div>
+  </section>
+  <section class="core-info">
+    <div class="core-info-a"><span>주소: {{hotelAddress.address}}</span></div>
+    <div class="core-info-b"><a [href]="'tel:' + hotel.phone">전화번호: {{ hotel.phone }}</a></div>
+    <div class="core-info-c" [innerHtml]="hotelLink"></div>
+    <div class="check-time">
+      <div class="core-info-d"><span>체크인 시간: {{ hotel.checkin }}</span></div>
+      <div class="core-info-e"><span>체크아웃 시간: {{ hotel.checkout }}</span></div>
+    </div>
+    <div class="avg-rating">
+      <div class="rating-stats core-info-f">
+        <label class="rating-label">방문자 평점: {{ hotelAddress.score }}/5</label>
+      </div>
+      <div class="rating-stats core-info-g">
+        <input class="rating" max="5" aria-readonly onmousedown="return false;" step="0.01" [style]="'--value:' + score" type="range" [value]="score">
       </div>
     </div>
-    <div class="col-md-6">
-        <img src="../assets/imge/e-1-1024x576.jpg" class="" alt="...">
-          <h2>시설 이용</h2>
-          <p>각종 시설이용</p>
-        </div>
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">시설이용 종류 </h1>
-          <p class="col-md-8 fs-4">바베큐 , 어린이수영장 , 수영장 , 포켓볼 , 근린공원  </p>
-        </div>
+  </section>
+  
+  <section class="facilities">
+    <h1>편의시설</h1>
+    <div class="check-boxes-grid">
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.bbq.toLowerCase()==='true'" onclick="return false;"><label for="bbq">BBQ장</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.beauty.toLowerCase()==='true'" onclick="return false;"><label for="beauty">미용관리샵</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.bicycle.toLowerCase()==='true'" onclick="return false;"><label for="bicycle">자전거대여</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.fitness.toLowerCase()==='true'" onclick="return false;"><label for="fitness">피트니스</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.karaoke.toLowerCase()==='true'" onclick="return false;"><label for="karaoke">노래방</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.publicpc.toLowerCase()==='true'" onclick="return false;"><label for="publicpc">공용PC</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.publicshower.toLowerCase()==='true'" onclick="return false;"><label for="publicshower">공용샤워장</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.sauna.toLowerCase()==='true'" onclick="return false;"><label for="sauna">사우나</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.seminar.toLowerCase()==='true'" onclick="return false;"><label for="seminar">세미나실</label></div>
+      <div><input class="facility-checkbox" type="checkbox" aria-readonly="true" [checked]="hotel.sports.toLowerCase()==='true'" onclick="return false;"><label for="sports">스포츠시설</label></div>
+    </div>
+  </section>
+  <section class="room-info">
+    <h1>방 종류</h1>
+    <div class="room-grid">
+      <div class="room-div" *ngFor="let room of roomArray; let i=index">
+        <h2>Room {{i+1}}: {{ room.roomname }}</h2>
+        <pre>{{ room.info }}</pre>
       </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label"></label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="제목 입력 하세요">
