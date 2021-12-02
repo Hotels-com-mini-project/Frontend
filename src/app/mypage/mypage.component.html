@@ -28,13 +28,14 @@
     </div>
   </nav>
 <h1>회원정보 입력</h1>
-<form class="row g-3">
+<form class="row g-3" (ngSubmit)="loginUser(loginForm)" #loginForm="ngForm">
     <div class="col-auto">
+      <input type="hidden" class="form-control" ngModel name="userId"/>
       <label for="inputPassword2" class="visually-hidden">Password</label>
-      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword2" ngModel name="password" placeholder="Password" />
     </div>
     <div class="col-auto">
-        <a  class="btn btn-primary" routerLink="/my1"  aria-current="page">클릭</a>
+        <button type="submit" class="btn btn-primary" aria-current="page" >클릭</button>
     </div>
   </form>
  

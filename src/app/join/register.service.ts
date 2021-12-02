@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-  private apiUrl = 'https://localhost:9000';
+  private apiUrl = 'http://172.30.1.19:9000';
   constructor(private http:HttpClient) {}
 
-  public registerRequest(user: User): Observable<User> {
-    return this.http.post<User>(`${this.apiUrl}/user/join`, user)
+  public registerRequest(user: User) {
+    return this.http.post(`${this.apiUrl}/user/join`, user, {responseType:'text'});
   }
 }

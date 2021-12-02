@@ -31,9 +31,13 @@ const appRoutes: Routes = [
   {path: 'review', component:ReviewComponent},
   {path: 'my', component:MypageComponent},
   {path: 'my1', component:Mypage1Component},
+<<<<<<< Updated upstream
   {path: 'hotel/:id', component:GetHotelComponent},
   {path: 'list/:keyword', component:GetListComponent},
   {path: 'list/:keyword/:page', component:GetListComponent}
+=======
+  {path: 'home', component:HomeComponent}
+>>>>>>> Stashed changes
 ]
 
 

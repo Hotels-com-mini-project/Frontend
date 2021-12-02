@@ -17,14 +17,27 @@ export class JoinComponent implements OnInit {
   }
 
   registerUser(registerForm: NgForm):void {
+    console.log(registerForm.value);
     this.registerService.registerRequest(registerForm.value).subscribe(
+<<<<<<< Updated upstream
       (response: User) => {
      
+=======
+      (_response: string) => {
+>>>>>>> Stashed changes
         registerForm.reset();
+        alert("회원가입이 완료되었습니다.");
+        document.getElementById("add-register")?.click();
       },
+<<<<<<< Updated upstream
       (error: HttpErrorResponse) => {
      
         registerForm.reset();
+=======
+      (_error: HttpErrorResponse) => {
+        // registerForm.reset();
+        alert("중복된 아이디입니다.");
+>>>>>>> Stashed changes
       }
     )
   }
